@@ -46,20 +46,27 @@ public class SimpleAgenda {
     }
 
     static void add(String [] L) {
+       // boolean duplicat = false;
+        String name=null;
 
-        if (index < L.length) {
-            String name = SkeletonJava.readStringConsole("Input the name: ");
-            L[index] = name;
-            index++;
-            System.out.println("Ati introdus " + "'" + name + "'" + " Mai aveti " + (L.length - index) + " pozitii libere");
-           ;
-        }
-        else
+        if (index < L.length ) {
+            name = SkeletonJava.readStringConsole("Input the name: ");
+                L[index] = name;
+                index++;
+                System.out.println("Ati introdus " + "'" + name + "'" + " Mai aveti " + (L.length - index) + " pozitii libere");
+
+
+        } else
 
             System.out.println("Memory is full");
 
-        }
+//        for (int i = 0; i < L.length; i++) {
+//            if (L[i].equals(name))
+//                duplicat=true;
+//        }
+//        if (duplicat==true) System.out.println(name + "already exists");
 
+    }
 
 
 
