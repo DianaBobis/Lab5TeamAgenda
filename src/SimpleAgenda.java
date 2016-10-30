@@ -53,7 +53,7 @@ public class SimpleAgenda {
             name = SkeletonJava.readStringConsole("Input the name: ");
                 L[index] = name;
                 index++;
-                System.out.println("Ati introdus " + "'" + name + "'" + " Mai aveti " + (L.length - index) + " pozitii libere");
+                System.out.println("You entered" + "'" + name + "'" +  (L.length - index) + " empty spots left");
 
 
         } else
