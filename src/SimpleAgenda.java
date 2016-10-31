@@ -46,57 +46,45 @@ public class SimpleAgenda {
     }
 
     static void add(String [] L) {
-       // boolean duplicat = false;
-        String name=null;
+        boolean duplicat = false;
+        String name = null;
 
-        if (index < L.length ) {
+        if (index < L.length) {
             name = SkeletonJava.readStringConsole("Input the name: ");
-                L[index] = name;
-                index++;
-                System.out.println("You entered" + "'" + name + "'" +  (L.length - index) + " empty spots left");
-
-
+            L[index] = name;
+            index++;
+            System.out.println("You entered" + "'" + name + "'" + (L.length - index) + " empty spots left");
         } else
-
             System.out.println("Memory is full");
-
-//        for (int i = 0; i < L.length; i++) {
-//            if (L[i].equals(name))
-//                duplicat=true;
-//        }
-//        if (duplicat==true) System.out.println(name + "already exists");
-
     }
-
-
-
-
+    static void FindDuplicates(){
+        for (int i=0; i<listName.length; i++) {
+            if (listName[i].equals())
+        }
+    }
 
 
     static void del(String [] L) {
-
-        for (int i = 0; i < L.length; i++) {
-            if (L[i] == null)
-                System.out.println("Position " + i + " empty");
-
-        }
-
         String namedel = SkeletonJava.readStringConsole("Input a name ");
-        boolean verif = false;
-        for (int i = 0; i < L.length; i++) {
-            if (L[i] != null && L[i].equals(namedel)) {
-                L[i] = null;
-                index = i;
-            }
-            else
-
-                verif = true;
+        int pozitie=-1;
+        pozitie=search(namedel);
+        if (pozitie!=-1) {
+            L[pozitie] = null;
+            index = pozitie;
         }
-        if (verif == true) System.out.println(namedel + " not recorded");
-
-
-
+        else System.out.println("Record " + namedel + " not recorded");
     }
+
+    static int search(String name) {
+        for (int i=0; i<listName.length; i++) {
+            if(name.equals(listName[i]))
+                return i;
+        }
+        return -1;
+    }
+
+
+
     static void modify(String[] L) {
 
         String namemod = SkeletonJava.readStringConsole("Input a name you want to modify ");
@@ -105,7 +93,7 @@ public class SimpleAgenda {
                 String newname = SkeletonJava.readStringConsole("Input the new name: ");
                 L[i] = newname;
             }
-            else break;
+            else System.out.println(namemod+" not registered");
         }
 
     }
